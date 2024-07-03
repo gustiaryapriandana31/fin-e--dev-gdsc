@@ -1,5 +1,6 @@
 import './App.css'
 import CreateDonutData from './components/CreateDonutData'
+import ReadDonutData from './components/ReadDonutData'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1>React App</h1>
       <CreateDonutData/>
+      <ReadDonutData/>
     </>
   )
 }
