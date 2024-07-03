@@ -3,11 +3,8 @@ import { useEffect, useState } from "react";
 import {
   collection,
   getDocs,
-  updateDoc,
-  doc,
-  deleteDoc,
-  onSnapshot,
 } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const ReadDonutData = () => {
 
@@ -42,9 +39,9 @@ const ReadDonutData = () => {
                 <p>{donut.donutDesc}</p>
                 <h6 className="text-red-400 font-bold">{donut.donutPrice}</h6>
                 <div className="flex flex-row justify-center items-center gap-5 mt-5 my-2">
-                  <button className="bg-orange-400 rounded-md p-2">
+                  <Link to={'/edit/'+donut.id} className="bg-orange-400 rounded-md p-2">
                     Update
-                  </button>
+                  </Link>
                   <button className="bg-red-400 rounded-md p-2">Delete</button>
                 </div>
               </li>

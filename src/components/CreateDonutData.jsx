@@ -5,9 +5,6 @@ import {
   addDoc,
 } from "firebase/firestore";
 
-// const DB = db.firestore();
-// const DonutsData = DB.collection('donutsData');
-
 const CreateDonutData = () => {
 
     const [donutName, setDonutName] = useState("");
