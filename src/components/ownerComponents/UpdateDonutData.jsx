@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
-import { db } from "../config/firebaseConfig";
+import { donutsDataDB, donutsImgDB } from "../../config/firebaseConfig";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  getDoc,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 
 const UpdateDonutData = () => {
 
@@ -15,29 +11,33 @@ const UpdateDonutData = () => {
     const [donutName, setDonutName] = useState("");
     const [donutDesc, setDonutDesc] = useState("");
     const [donutPrice, setDonutPrice] = useState("");
+    const [donutImg, setDonutImg] = useState("");
+
     
     useEffect(() => {
       const getDataDonut = async () => {
-        const donutDataRef = await getDoc(doc(db, "donutsData", donutId));
+        const donutDataRef = await getDoc(doc(donutsDataDB, "donutsData", donutId));
         try {
           setDonutName(donutDataRef.data().donutName);
           setDonutDesc(donutDataRef.data().donutDesc);
           setDonutPrice(donutDataRef.data().donutPrice);
+          setDonutImg(donutDataRef.data().donutImg);
         } catch (error) {
-          console.log("Error reading data : ", error);
+          console.log("Error updating data : ", error);
         }
         
       };
       getDataDonut();
     }, [donutId]);
 
-    const updateData = async (donutName, donutDesc, donutPrice) => {
-      const donutDataRef = doc(db, "donutsData", donutId);
+    const updateData = async (donutName, donutDesc, donutPrice, donutImg) => {
+      const donutDataRef = doc(donutsDataDB, "donutsData", donutId);
       try {
         await updateDoc(donutDataRef, {
           donutName,
           donutDesc,
           donutPrice,
+          donutImg
         }).then(() => {
           alert("Data updated successfully!");
           window.location.href = "/read";
@@ -60,6 +60,18 @@ const UpdateDonutData = () => {
     const handleDonutPriceChange = (e) => {
       const value = e.target.value;
       setDonutPrice(value);
+    };
+
+    const handleUploadImage = (e) => {
+      console.log("Image File : " + e.target.files[0]);
+      const imgfiles = e.target.files[0];
+      const donutsDataRef = ref(donutsImgDB, "donutImages/" + v4());
+      uploadBytes(donutsDataRef, imgfiles).then((data) => {
+        // console.log("Data Image Donut : " + data);
+        getDownloadURL(data.ref).then((url) => {
+          setDonutImg(url);
+        });
+      });
     };
 
     const handleSubmit = (e) => {
@@ -100,6 +112,16 @@ const UpdateDonutData = () => {
               value={donutPrice}
               name="donutPrice"
               onChange={handleDonutPriceChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="donutImg">Donut Image :</label>
+            <input
+              className="border border-black rounded p-1 m-2"
+              type="file"
+              accept="image/*"
+              name="donutImg"
+              onChange={handleUploadImage}
             />
           </div>
           <button
