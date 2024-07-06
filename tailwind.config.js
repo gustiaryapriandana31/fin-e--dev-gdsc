@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        neue: ["Bebas Neue", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        "roboto-mono": ["Roboto Mono", "sans-serif"],
+        audiowide: ["Audiowide", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
