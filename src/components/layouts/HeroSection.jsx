@@ -12,9 +12,9 @@ import { Autoplay } from "swiper/modules";
 // Import Swiper styles
 import 'swiper/css';
 
-export const HeroSection = () => {
+const HeroSection = () => {
     return (
-      <div className="mt-5">
+      <div className="mt-5 screen">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-white font-poppins">
             D<LuDonut className="inline" />
@@ -29,7 +29,7 @@ export const HeroSection = () => {
             <FaPenAlt className="inline text-lg -ml-2 -mt-2"/>
           </Button>
         </div>
-        <div className="flex">
+        <div className="flex mb-3">
           <Swiper
             key="swiper-container"
             spaceBetween={30}
@@ -41,8 +41,8 @@ export const HeroSection = () => {
               disableOnInteraction: false,
             }}
           >
-            {heroImage.map((image) => (
-              <SwiperSlide key="swiper-content">
+            {heroImage.map((image, index) => (
+              <SwiperSlide key={index}>
                 <div
                   key={image.id}
                   className="flex justify-center items-center shadow-md w-[80%] mx-auto rounded-sm"
@@ -66,3 +66,5 @@ export const HeroSection = () => {
       </div>
     );
 }
+
+export default HeroSection;

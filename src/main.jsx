@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CreateDonutData from './components/ownerComponents/CreateDonutData.jsx';
-import ReadDonutData from './components/ownerComponents/ReadDonutData.jsx';
-import UpdateDonutData from './components/ownerComponents/UpdateDonutData.jsx';
+import CreateDonutData from './components/ownerComponents/CreateDonutData';
+import ReadDonutData from './components/ownerComponents/ReadDonutData';
+import UpdateDonutData from './components/ownerComponents/UpdateDonutData';
+import Donuts from './components/layouts/Donuts';
 
 const Router = createBrowserRouter([
   {
     path: '/',
     element: <App/>
+  },
+  {
+    path: '/donuts',
+    element: <Donuts/>
   },
   {
     path: '/create',

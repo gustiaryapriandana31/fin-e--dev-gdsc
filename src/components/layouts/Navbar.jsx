@@ -1,6 +1,6 @@
 import { navBarData } from "../../staticData/navbarData";
 
-export const Navbar = () => {
+const Navbar = () => {
     return (
         <nav className="flex flex-row justify-center">
             <div className="flex justify-around items-center rounded-full p-2 w-screen">
@@ -16,6 +16,7 @@ export const Navbar = () => {
                 </div>
             </div>
         </nav>
-    
     )
 }
+
+export default Navbar;

@@ -10,6 +10,9 @@ export default {
         "roboto-mono": ["Roboto Mono", "sans-serif"],
         audiowide: ["Audiowide", "sans-serif"],
       },
+      backgroundImage: {
+        plate: "url('/src/assets/piring.png')",
+      },
     },
   },
   plugins: [],

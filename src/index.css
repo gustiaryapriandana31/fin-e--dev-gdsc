@@ -7,3 +7,6 @@ body {
     box-sizing: border-box;
 }
 
+img.donut-image {
+    filter: drop-shadow(0 0 5px orange);
+}

@@ -1,16 +1,20 @@
-import { HeroSection } from './components/customerComponents/HeroSection';
-import { Navbar } from './components/customerComponents/Navbar';
+import Navbar from "./components/layouts/Navbar";
+import HeroSection from "./components/layouts/HeroSection";
+import About from "./components/layouts/About"
+import Composition from "./components/layouts/Composition";
+
 
 function App() {
-
   return (
     <>
       <div className="bg-amber-500/85 h-screen pt-5">
-        <Navbar />
-        <HeroSection />
+        <Navbar/>
+        <HeroSection/>
+        <About/>
+        <Composition/>
       </div>
     </>
   );
 }
 
-export default App
+export default App;
