@@ -2,6 +2,7 @@ import Navbar from "./components/layouts/Navbar";
 import HeroSection from "./components/layouts/HeroSection";
 import About from "./components/layouts/About"
 import Composition from "./components/layouts/Composition";
+import FormReviewer from "./components/layouts/FormReviewer";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <HeroSection/>
         <About/>
         <Composition/>
+        <FormReviewer/>
       </div>
     </>
   );

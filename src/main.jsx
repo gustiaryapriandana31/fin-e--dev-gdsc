@@ -7,6 +7,7 @@ import CreateDonutData from './components/ownerComponents/CreateDonutData';
 import ReadDonutData from './components/ownerComponents/ReadDonutData';
 import UpdateDonutData from './components/ownerComponents/UpdateDonutData';
 import Donuts from './components/layouts/Donuts';
+import ReadReviewReviewer from './components/ownerComponents/ReadReviewReviewer.jsx';
 
 const Router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const Router = createBrowserRouter([
   {
     path: 'read',
     element: <ReadDonutData/>
+  }, 
+  {
+    path: 'readreview',
+    element: <ReadReviewReviewer/>
   }, 
   {
     path: 'edit/:donutId',

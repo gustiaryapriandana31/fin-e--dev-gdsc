@@ -60,9 +60,10 @@ const ReadDonutData = () => {
 
   return (
     <div>
-      <h1 className="mt-10 font-bold text-lg text-slate-700">
-        All Donuts Data
+      <h1 className="text-center text-3xl font-bold text-orange-600 font-serif my-10">
+        All Review From Customer
       </h1>
+
       <Link
         to="/create"
         className="inline-block mt-10 bg-blue-400 rounded-md p-2"
