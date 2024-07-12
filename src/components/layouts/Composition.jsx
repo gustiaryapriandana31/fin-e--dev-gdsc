@@ -27,7 +27,7 @@ const Composition = () => {
               {data.number}
             </h2>
             <article
-              className="hidden article p-4 h-40 absolute top-[34%] z-20 left-0 bg-slate-800 text-white border-2 rounded-lg md:rounded-br-3xl md:w-1/4 md:bg-white md:text-black md:top-12 md:left-48"
+              className="article p-4 h-40 absolute top-[34%] z-20 left-0 bg-slate-800 text-white border-2 rounded-lg md:rounded-br-3xl md:w-1/4 md:bg-white md:text-black md:top-12 md:left-48"
               data-desc={`DESC${data.number}`}>
               <h1 className="close cursor-pointer float-right bg-slate-500 w-6 h-6 text-center rounded-full">
                 X

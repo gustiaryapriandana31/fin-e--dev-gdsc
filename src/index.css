@@ -10,3 +10,10 @@ body {
 img.donut-image {
     filter: drop-shadow(0 0 5px orange);
 }
+
+.bg-plate {
+    background-image: url('assets/plate.png');
+    background-size: cover;
+    background-position-x: -80px;
+    background-repeat: no-repeat;
+}

@@ -1,27 +1,27 @@
 // Watch Features Description
 const numbers = document.querySelectorAll(".number");
-const article = document.querySelectorAll(".article");
-const closeButton = document.querySelectorAll(".close");
+const articles = document.querySelectorAll(".article");
+const closeButtons = document.querySelectorAll(".close");
 
 numbers.forEach(function (number) {
   number.addEventListener("click", () => {
     let target = number.getAttribute("data-target");
 
-    article.forEach(function (desc) {
-      if (desc.getAttribute("data-desc") === target) {
-        desc.classList.remove("hidden");
+    articles.forEach(function (article) {
+      if (article.getAttribute("data-desc") === target) {
+        article.classList.remove("hidden");
         console.log("muncul oy");
       } else {
-        desc.classList.add("hidden");
+        article.classList.add("hidden");
       }
     });
   });
 });
 
-closeButton.forEach(function (closeB) {
-  closeB.addEventListener("click", () => {
-    article.forEach(function (desc) {
-      desc.classList.add("hidden");
+closeButtons.forEach(function (closeButton) {
+  closeButton.addEventListener("click", () => {
+    articles.forEach(function (article) {
+      article.classList.add("hidden");
     });
   });
 });
