@@ -50,20 +50,20 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={handleSubmitForm} className="w-3/5 p-10 mx-auto">
-            <div className="">
-                <Label htmlFor="name">Nama Anda :</Label>
-                <Input type="text" name="name" value={reviewerName} placeholder="Masukkan Nama Anda" onChange= {handleReviewerNameChange}/>
+        <form onSubmit={handleSubmitForm} className="w-1/2 p-10 mx-auto shadow-xl bg-white/10 rounded-[60px]">
+            <div className="mb-3">
+                <Label htmlFor="name">Your Name :</Label>
+                <Input type="text" name="name" value={reviewerName} placeholder="Enter your name" onChange= {handleReviewerNameChange}/>
             </div>
-            <div className="">
-                <Label htmlFor="reviewer">Review Anda :</Label>
-                <TextArea name="reviewer" rows="10" placeholder="Saya sangat menyukai donat rasa ..." onChange={handleReviewContentChange}>{reviewContent}</TextArea>
+            <div className="mb-3">
+                <Label htmlFor="reviewer">Review :</Label>
+                <TextArea name="reviewer" rows="6" placeholder="I like so much with choco donut because..." onChange={handleReviewContentChange}>{reviewContent}</TextArea>
             </div>
-            <div className="">
-                <Label htmlFor="rating">Rating Anda (1-5) :</Label>
-                <Input type="text" name="rating" value={reviewRating} placeholder="Hanya angka (boleh pakai koma)" onChange={handleReviewRatingChange}/>
+            <div className="mb-2">
+                <Label htmlFor="rating">Rating (1-5) :</Label>
+                <Input type="text" name="rating" value={reviewRating} placeholder="Just number (enable with comma)" onChange={handleReviewRatingChange}/>
             </div>
-            <Button addedClassname="bg-blue-500 hover:bg-blue-700">Send Review</Button>
+            <Button addedClassname="bg-orange-500 hover:bg-orange-700">Send Review</Button>
         </form>
     )
 }
