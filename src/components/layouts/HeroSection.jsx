@@ -4,6 +4,7 @@ import { FaRegEye } from "react-icons/fa";
 import { LuDonut } from "react-icons/lu";
 import { TbNotes } from "react-icons/tb";
 import { FaPenAlt } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,10 +25,12 @@ const HeroSection = () => {
           <p className="text-slate-700 font-semibold">
             Sweeten your taste, sweeten your life, Enjoy your day
           </p>
-          <Button addedClassname="bg-transparent border-2 border-white text-white hover:bg-amber-700 hover:text-white hover:border-none hover:scale-125 hover:font-bold">
-            Order Now <TbNotes className="inline text-2xl" />
-            <FaPenAlt className="inline text-lg -ml-2 -mt-2"/>
-          </Button>
+          <Link to="/donuts">
+            <Button addedClassname="bg-transparent border-2 border-white text-white hover:bg-amber-700 hover:text-white hover:border-none hover:scale-125 hover:font-bold">
+              Order Now <TbNotes className="inline text-2xl" />
+              <FaPenAlt className="inline text-lg -ml-2 -mt-2" />
+            </Button>
+          </Link>
         </div>
         <div className="flex mb-3">
           <Swiper

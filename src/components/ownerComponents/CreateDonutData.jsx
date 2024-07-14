@@ -3,6 +3,10 @@ import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
+import Button from "../elements/Button";
+import Input from "../elements/Input";
+import Label from "../elements/Label";
+
 const CreateDonutData = () => {
   const [donutName, setDonutName] = useState("");
   const [donutDesc, setDonutDesc] = useState("");
@@ -64,62 +68,63 @@ const CreateDonutData = () => {
   };
 
   return (
-    <div>
-      <h1>CREATE DONUT DATA</h1>
+    <div className="border border-orange-500 w-1/2 px-20 py-10 mx-auto mt-6 rounded-md bg-orange-400">
+      <h1 className="font-bold text-3xl font-poppins text-center text-white mb-10">
+        CREATE DONUT DATA
+      </h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="donutName">Donut Name :</label>
-          <input
-            className="border border-black rounded p-1 m-2"
-            autoFocus
+        <div className="mb-3">
+          <Label htmlFor="donutName">Donut Name :</Label>
+          <Input
             type="text"
-            value={donutName}
             name="donutName"
+            value={donutName}
             onChange={handleDonutNameChange}
           />
         </div>
-        <div>
-          <label htmlFor="donutDesc">Donut Description :</label>
-          <input
-            className="border border-black rounded p-1 m-2"
+
+        <div className="mb-3">
+          <Label htmlFor="donutDesc">Donut Description :</Label>
+          <Input
             type="text"
-            value={donutDesc}
             name="donutDesc"
+            value={donutDesc}
             onChange={handleDonutDescChange}
           />
         </div>
-        <div>
-          <label htmlFor="donutPrice">Donut Price :</label>
-          <input
-            className="border border-black rounded p-1 m-2"
+
+        <div className="mb-3">
+          <Label htmlFor="donutPrice">Donut Price :</Label>
+          <Input
             type="text"
-            value={donutPrice}
             name="donutPrice"
+            value={donutPrice}
             onChange={handleDonutPriceChange}
           />
         </div>
-        <div>
-          <label htmlFor="donutImg">Donut Image :</label>
-          <input
-            className="border border-black rounded p-1 m-2"
+
+        <div className="mb-3">
+          <Label htmlFor="donutImage">Donut Image :</Label>
+          <Input
+            addedClassname
             type="file"
-            accept="image/*"
-            name="donutImg"
+            name="donutImage"
+            value={donutImg}
             onChange={handleUploadImage}
           />
         </div>
-        <button
-          className="p-2 bg-blue-400 text-white font-bold rounded"
+
+        <Button
+          addedClassname="p-2 bg-orange-500 hover:bg-orange-700 font-bold"
           disabled={
             donutName.length === 0 ||
             donutDesc.length === 0 ||
             donutPrice.length === 0 ||
             donutImg === ""
           }
-          type="submit"
         >
           Input Data
-        </button>
+        </Button>
       </form>
     </div>
   );

@@ -8,6 +8,10 @@ const Donuts = () => {
   const [donutsData, setDonutsData] = useState([]);
   const [donutsCart, setDonutsCart] = useState([]);
   const [donutTotalPrice, setDonutTotalPrice] = useState(0);
+  
+  useEffect(() => {
+      setDonutsCart(JSON.parse(localStorage.getItem("donutsCart")) || []);
+  }, []);
 
   useEffect(() => {
     if (donutsCart.length > 0) {
@@ -21,11 +25,6 @@ const Donuts = () => {
       localStorage.setItem("donutsCart", JSON.stringify(donutsCart));
     }
   }, [donutsCart, donutsData]);
-
-  // useEffect(() => {
-  //   let data = JSON.parse(localStorage.getItem("donutsCart"));
-  //   setDonutsCart(data || []);
-  // }, []);
 
   // To read Data from Database Firestore
   useEffect(() => {
@@ -46,7 +45,7 @@ const Donuts = () => {
 
     readData();
   }, []);
-
+  
   const handleAddToOrder = (donutId) => {
     if (donutsCart.find((item) => item.donutId === donutId)) {
       setDonutsCart(
@@ -84,8 +83,8 @@ const Donuts = () => {
             </CardDonut>
           ))}
         </div>
-        <div className="">
-          <h1 className="text-3xl font-bold ">Cart</h1>
+        <div className="w-1/4">
+          <h1 className="text-3xl font-bold">Cart</h1>
           <table className="text-left table-auto border-separate">
             <thead>
               <tr>
@@ -97,26 +96,27 @@ const Donuts = () => {
               </tr>
             </thead>
             <tbody>
-              {donutsCart.map((item) => {
-                const donut = donutsData.find(
-                  (donut) => donut.donutId === item.donutId
-                );
-                return (
-                  <tr key={item.donutId}>
-                    <td>{donut.donutName}</td>
-                    <td>{donut.donutPrice}</td>
-                    <td>
-                      <img
-                        src={donut.donutImg}
-                        alt={donut.donutName}
-                        className="w-20 h-10"
-                      />
-                    </td>
-                    <td>{item.qty}</td>
-                    <td>{item.qty * donut.donutPrice}</td>
-                  </tr>
-                );
-              })}
+              {donutsCart.length > 0 &&
+                donutsCart.map((item) => {
+                  const donut = donutsData.find(
+                    (donut) => donut.donutId === item.donutId
+                  );
+                  return (
+                    <tr key={item.donutId}>
+                      <td>{donut.donutName}</td>
+                      <td>{donut.donutPrice}</td>
+                      <td>
+                        <img
+                          src={donut.donutImg}
+                          alt={donut.donutName}
+                          className="w-20 h-10"
+                        />
+                      </td>
+                      <td>{item.qty}</td>
+                      <td>{item.qty * donut.donutPrice}</td>
+                    </tr>
+                  );
+                })}
               <tr>
                 <td colSpan={4}>Grand Total Price</td>
                 <td>{donutTotalPrice}</td>
