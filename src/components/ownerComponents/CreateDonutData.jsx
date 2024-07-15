@@ -68,16 +68,17 @@ const CreateDonutData = () => {
   };
 
   return (
-    <div className="border border-orange-500 w-1/2 px-20 py-10 mx-auto mt-6 rounded-md bg-orange-400">
-      <h1 className="font-bold text-3xl font-poppins text-center text-white mb-10">
-        CREATE DONUT DATA
-      </h1>
-      <form onSubmit={handleSubmit}>
+    <div className="w-4/5 h-screen px-20 py-6 mx-auto bg-orange-400">
+      <form onSubmit={handleSubmit} className="w-3/4 py-5 px-10 border rounded-sm">
+        <h1 className="font-bold text-3xl font-poppins text-center text-white mb-10">
+          CREATE DONUT DATA
+        </h1>
         <div className="mb-3">
           <Label htmlFor="donutName">Donut Name :</Label>
           <Input
             type="text"
             name="donutName"
+            placeholder="ex : Donut Chocolate"
             value={donutName}
             onChange={handleDonutNameChange}
           />
@@ -88,6 +89,7 @@ const CreateDonutData = () => {
           <Input
             type="text"
             name="donutDesc"
+            placeholder="Just little description about the donut"
             value={donutDesc}
             onChange={handleDonutDescChange}
           />

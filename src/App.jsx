@@ -4,16 +4,15 @@ import About from "./components/layouts/About"
 import Composition from "./components/layouts/Composition";
 import FormReviewer from "./components/layouts/FormReviewer";
 
-
 function App() {
   return (
     <>
       <div className="bg-amber-500/85 h-screen pt-5">
-        <Navbar/>
-        <HeroSection/>
-        <About/>
-        <Composition/>
-        <FormReviewer/>
+        <Navbar />
+        <HeroSection />
+        <About />
+        <Composition />
+        <FormReviewer />
       </div>
     </>
   );

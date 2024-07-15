@@ -8,32 +8,40 @@ import ReadDonutData from './components/ownerComponents/ReadDonutData';
 import UpdateDonutData from './components/ownerComponents/UpdateDonutData';
 import Donuts from './components/layouts/Donuts';
 import ReadReviewReviewer from './components/ownerComponents/ReadReviewReviewer.jsx';
+import DashboardOwner from './components/layouts/DashboardOwner.jsx';
 
 const Router = createBrowserRouter([
   {
-    path: '/',
-    element: <App/>
+    path: "/",
+    element: <App />,
   },
   {
-    path: '/donuts',
-    element: <Donuts/>
+    path: "/donuts",
+    element: <Donuts />,
+  },
+
+  {
+    path: "edit/:donutId",
+    element: <UpdateDonutData />,
   },
   {
-    path: '/create',
-    element: <CreateDonutData/>
-  }, 
-  {
-    path: 'read',
-    element: <ReadDonutData/>
-  }, 
-  {
-    path: 'readreview',
-    element: <ReadReviewReviewer/>
-  }, 
-  {
-    path: 'edit/:donutId',
-    element: <UpdateDonutData/>
-  }
+    path: "/dashboard",
+    element: <DashboardOwner />,
+    children: [
+      {
+        path: "create",
+        element: <CreateDonutData />,
+      },
+      {
+        path: "read",
+        element: <ReadDonutData />,
+      },
+      {
+        path: "readreview",
+        element: <ReadReviewReviewer />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
