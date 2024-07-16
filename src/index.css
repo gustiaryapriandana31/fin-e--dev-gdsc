@@ -8,7 +8,7 @@ body {
 }
 
 img.donut-image {
-    filter: drop-shadow(0 0 5px orange);
+    filter: drop-shadow(3px 5px 2px chocolate);
 }
 
 .bg-plate {

@@ -10,6 +10,10 @@ export default {
         md: "721px",
         // => @media (min-width: 700px) { ... }
       },
+      spacing: {
+        38: "9.5rem",
+        42: "10.5rem",
+      },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         neue: ["Bebas Neue", "sans-serif"],
@@ -19,6 +23,19 @@ export default {
       },
       backgroundImage: {
         plate: "url('/src/assets/piring.png')",
+      },
+      animation: {
+        ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
+      },
+      keyframes: {
+        ripple: {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(0.9)",
+          },
+        },
       },
     },
   },
