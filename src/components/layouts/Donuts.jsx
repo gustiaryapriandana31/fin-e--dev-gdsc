@@ -59,12 +59,12 @@ const Donuts = () => {
   };
 
   return (
-    <div className="p-10">
-      <h2 className="mt-2 mb-6 text-center text-4xl font-bold text-orange-600">
+    <div className="md:p-8 p-3">
+      <h2 className="mt-2 md:mb-6 mb-3 text-center md:text-4xl text-2xl font-bold text-orange-600">
         All Donuts Available
       </h2>
-      <div className="flex flex-row">
-        <div className="w-3/4 flex flex-row flex-wrap">
+      <div className="md:flex flex-row md:gap-5">
+        <div className="md:mb-0 mb-7 relative md:w-3/5 grid md:grid-cols-3 grid-cols-2 gap-3">
           {donutsData.map((data) => (
             <CardDonut key={data.donutId}>
               <CardDonut.CardHeader
@@ -83,8 +83,8 @@ const Donuts = () => {
             </CardDonut>
           ))}
         </div>
-        <div className="w-1/4">
-          <h1 className="text-3xl font-bold">Cart</h1>
+        <div className="w-2/5 px-8">
+          <h1 className="text-3xl font-bold text-center">Cart</h1>
           <table className="text-left table-auto border-separate">
             <thead>
               <tr>

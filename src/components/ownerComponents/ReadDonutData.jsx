@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { ref, deleteObject, getDownloadURL } from "firebase/storage";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const ReadDonutData = () => {
+
   const navigatePage = useNavigate();
   const [donutsData, setDonutsData] = useState([]);
   const [donutImgUrl, setDonutImgUrl] = useState("");
@@ -59,47 +62,52 @@ const ReadDonutData = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center text-3xl font-bold text-orange-600 font-serif my-10">
-        All Review From Customer
+    <div className="w-4/5">
+      <h1 className="text-center md:text-4xl text-3xl font-bold text-orange-600 font-serif mt-7">
+        All Donuts Available
       </h1>
 
-      <Link
-        to="/create"
-        className="inline-block mt-10 bg-blue-400 rounded-md p-2"
-      >
+      <Link to="/create" className="text-center inline-block font-bold text-white mt-10 bg-orange-400 rounded-md px-4 py-2 md:mx-5 mx-2 mb-3">
         Add Data
       </Link>
-      <ul>
+      <section className="grid grid-cols-2 gap-3 mx-2 md:grid-cols-5 md:gap-0">
         {donutsData.map((donut, index) => (
-          <div key={index} className="flex flex-col gap-4 px-4 my-5">
-            <li className="border p-2 bg-slate-200 rounded m-2">
-              <img
-                src={donut.donutImg}
-                alt="Donut Image"
-                className="w-40 h-60 m-auto"
-              />
-              <h3>{donut.donutName}</h3>
-              <p>{donut.donutDesc}</p>
-              <h6 className="text-red-400 font-bold">{donut.donutPrice}</h6>
-              <div className="flex flex-row justify-center items-center gap-5 mt-5 my-2">
-                <button
-                  onClick={() => navigatePage("/edit/" + donut.donutId)}
-                  className="bg-orange-400 rounded-md p-2"
-                >
-                  Update
-                </button>
-                <button
-                  onClick={() => deleteData(donut.donutId)}
-                  className="bg-red-400 rounded-md p-2"
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
+          <div
+            key={index}
+            className="p-2 pb-0 bg-amber-300 rounded md:m-2 mb-3 relative"
+          >
+            <div className="pt-2 mb-4">
+              <img src={donut.donutImg} alt={donut.donutName} />
+            </div>
+
+            <div className="h-full mb-10">
+              <h3 className="font-semibold text-sm text-center underline">
+                {donut.donutName}
+              </h3>
+              <p className="text-sm m-2 w-full font-normal">
+                {donut.donutDesc}
+              </p>
+              <p className="absolute font-poppins font-semibold top-0 right-0 bg-lime-400 md:p-1 p-px rounded-tr-md rounded-bl-md text-sm">
+                {donut.donutPrice}
+              </p>
+            </div>
+
+            <button
+              onClick={() => navigatePage("/edit/" + donut.donutId)}
+              className="bg-orange-400 p-2 absolute -bottom-4 left-0 w-1/2"
+            >
+              <FaRegEdit className="inline text-lg text-white hover:text-orange-500" />
+              
+            </button>
+            <button
+              onClick={() => deleteData(donut.donutId)}
+              className="bg-red-400 p-2 absolute -bottom-4 right-0 w-1/2"
+            >
+              <MdDelete className="inline text-lg text-white hover:text-red-500"/>
+            </button>
           </div>
         ))}
-      </ul>
+      </section>
     </div>
   );
 };

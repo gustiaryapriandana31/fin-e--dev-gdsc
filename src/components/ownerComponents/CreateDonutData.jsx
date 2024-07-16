@@ -68,13 +68,15 @@ const CreateDonutData = () => {
   };
 
   return (
-    <div className="w-4/5 h-screen px-20 py-6 mx-auto bg-orange-400">
-      <form onSubmit={handleSubmit} className="w-3/4 py-5 px-10 border rounded-sm">
-        <h1 className="font-bold text-3xl font-poppins text-center text-white mb-10">
+    <div className="w-4/5 h-screen md:px-20 px-2 py-12 mx-auto bg-gradient-to-br from-orange-100/10 to-yellow-400">
+      <form
+        onSubmit={handleSubmit}
+        className="md:w-3/4 py-5 md:px-10 px-3 shadow-md shadow-white md:border md:border-orange-400 rounded-lg">
+        <h1 className="font-bold md:text-3xl text-xl font-poppins text-center text-orange-400 mb-10">
           CREATE DONUT DATA
         </h1>
         <div className="mb-3">
-          <Label htmlFor="donutName">Donut Name :</Label>
+          <Label htmlFor="donutName" addedClassName="text-sm mb-0">Donut Name :</Label>
           <Input
             type="text"
             name="donutName"
@@ -85,7 +87,7 @@ const CreateDonutData = () => {
         </div>
 
         <div className="mb-3">
-          <Label htmlFor="donutDesc">Donut Description :</Label>
+          <Label htmlFor="donutDesc" addedClassName="text-sm mb-0">Donut Description :</Label>
           <Input
             type="text"
             name="donutDesc"
@@ -96,7 +98,7 @@ const CreateDonutData = () => {
         </div>
 
         <div className="mb-3">
-          <Label htmlFor="donutPrice">Donut Price :</Label>
+          <Label htmlFor="donutPrice" addedClassName="text-sm mb-0">Donut Price :</Label>
           <Input
             type="text"
             name="donutPrice"
@@ -106,7 +108,7 @@ const CreateDonutData = () => {
         </div>
 
         <div className="mb-3">
-          <Label htmlFor="donutImage">Donut Image :</Label>
+          <Label htmlFor="donutImage" addedClassName="text-sm mb-0">Donut Image :</Label>
           <Input
             addedClassname
             type="file"

@@ -15,14 +15,14 @@ import 'swiper/css';
 
 const HeroSection = () => {
     return (
-      <div className="mt-5 screen">
+      <div className="my-7 md:my-0">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-white font-poppins">
+          <h1 className="md:text-6xl text-5xl md:mt-0 mt-12 font-bold text-white font-poppins">
             D<LuDonut className="inline" />
             D<FaRegEye className="inline" />
             NATS
           </h1>
-          <p className="text-slate-700 font-semibold">
+          <p className="text-slate-700 font-semibold md:w-full w-3/4 mx-auto md:mt-0 mt-5">
             Sweeten your taste, sweeten your life, Enjoy your day
           </p>
           <Link to="/donuts">
@@ -48,18 +48,18 @@ const HeroSection = () => {
               <SwiperSlide key={index}>
                 <div
                   key={image.id}
-                  className="flex justify-center items-center shadow-md w-[80%] mx-auto rounded-sm"
+                  className="md:flex md:justify-center md:items-center shadow-xl md:w-3/4 w-[80%] mx-auto rounded-br-[2.5rem] rounded-tl-[6rem] md:rounded-none py-6 md:py-3"
                 >
                   <img
                     src={image.src}
                     alt={image.img}
-                    className="w-1/2 inline-block"
+                    className="md:w-1/2 inline-block"
                   />
-                  <div className="w-1/4 -ml-10">
-                    <h1 className="text-white font-serif font-semibold">
+                  <div className="md:w-1/4 md:-ml-10">
+                    <h1 className="text-white font-serif font-semibold text-center my-5 text-lg">
                       {image.name}
                     </h1>
-                    <p className="">{image.desc}</p>
+                    <p className="text-sm font-roboto text-center">{image.desc}</p>
                   </div>
                 </div>
               </SwiperSlide>
