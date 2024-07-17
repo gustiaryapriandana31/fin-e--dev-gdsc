@@ -32,13 +32,13 @@ const SidebarDashboard = () => {
                 />
             )}
             <Link to="/" className="block">
-            <img
-                src={logo}
-                alt="Logo Image"
-                className={`md:w-32 md:h-16 ${
-                showMenu ? "hidden" : "inline-block w-40 h-12"
-                }`}
-            />
+                <img
+                    src={logo}
+                    alt="Logo Image"
+                    className={`md:w-32 md:h-16 ${
+                    showMenu ? "hidden" : "inline-block w-40 h-12"
+                    }`}
+                />
             </Link>
             <nav className="flex flex-col md:gap-5 gap-3 mt-12">
                 <Link

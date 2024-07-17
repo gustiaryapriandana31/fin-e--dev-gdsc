@@ -27,11 +27,12 @@ const Composition = () => {
 
     return (
       <section className="h-screen font-roboto bg-amber-950 md:flex md:flex-row md:justify-center md:items-center relative">
-          <h1 className="z-10 font-bold md:text-5xl text-4xl text-white font-poppins absolute top-6 md:left-[38%] left-16">Bedah Donut</h1>
 
           <img src={donutDarkChoco} alt="Donut Dark Choco" className="z-10 inline-block my-28"/>
           <img src={donutPinky} alt="Donut Dark Choco" className="z-10  inline-block mt-12"/>
           <Ripple/>
+
+          <h1 className="z-10 font-bold md:text-5xl text-4xl text-white font-poppins absolute top-6 md:left-[38%] left-16">Bedah Donut</h1>
 
           {/* Choco Donuts Composition */}
           <div key={DonutsData[0].number} className="z-10 bg-red-400">
@@ -73,7 +74,7 @@ const Composition = () => {
             <Article article={article[5]} addedClassName="top-[65%] right-5 md:top-8 md:right-7 md:rounded-tl-3xl md:rounded-bl-3xl " handleDisplayArticle={() => handleToggleArticle(5)} dataDonut={DonutsData[5]}/>
           </div>
 
-          <Button addedClassname="z-10 absolute md:bottom-10 bottom-[45%] md:left-[45%] left-24 bg-orange-500 rounded-xl font-poppins outline-none" onClick={handleDisplayAll}>Tampilkan Semua</Button>
+          <Button addedClassname="z-10 absolute md:bottom-10 bottom-[45%] md:left-[42%] left-20 bg-orange-500 rounded-xl font-poppins outline-none" onClick={handleDisplayAll}>Tampilkan Semua</Button>
       </section>
 
     );

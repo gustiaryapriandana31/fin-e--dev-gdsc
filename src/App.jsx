@@ -3,8 +3,9 @@ import HeroSection from "./components/layouts/HeroSection";
 import About from "./components/layouts/About"
 import Composition from "./components/layouts/Composition";
 import FormReviewer from "./components/layouts/FormReviewer";
+import Footer from "./components/layouts/Footer"; 
 
-function App() {
+function App () {
   return (
     <>
       <div className="bg-amber-500/85 md:pt-5">
@@ -13,6 +14,7 @@ function App() {
         <About />
         <Composition />
         <FormReviewer />
+        <Footer />
       </div>
     </>
   );
