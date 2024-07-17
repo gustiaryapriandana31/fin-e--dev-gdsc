@@ -28,16 +28,18 @@ const Navbar = () => {
             />
           )}
           <ul
-            className={`z-10 md:flex md:flex-row md:justify-end md:gap-12 md:items-center text-slate-800 font-semibold absolute md:static md:bg-transparent bg-amber-100 rounded-tl-3xl rounded-bl-[3rem] md:w-full w-1/2 right-0 transition-all duration-400 ease-in ${
+            className={`z-10 md:flex md:flex-row md:justify-end md:gap-12 md:items-center text-slate-800 font-semibold absolute md:static md:bg-transparent bg-amber-200 rounded-tl-3xl rounded-bl-[3rem] md:w-full w-1/2 right-0 transition-all duration-400 ease-in ${
               showMenu
                 ? "top-16 opacity-100"
                 : "top-12 md:opacity-100 opacity-0"
             }`}
           >
             {navBarData.map((data) => (
-              <Link to={data.link} key={data.id} className="text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110">
-                {data.title}
-              </Link>
+              <li key={data.id} className="text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110">
+                <Link to={data.link}>
+                  {data.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

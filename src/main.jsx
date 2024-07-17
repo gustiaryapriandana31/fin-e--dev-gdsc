@@ -9,6 +9,7 @@ import UpdateDonutData from './components/ownerComponents/UpdateDonutData';
 import Donuts from './components/layouts/Donuts';
 import ReadReviewReviewer from './components/ownerComponents/ReadReviewReviewer.jsx';
 import DashboardOwner from './components/layouts/DashboardOwner.jsx';
+import WelcomeOwner from './components/ownerComponents/WelcomeOwner.jsx';
 
 const Router = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardOwner />,
+    element: (
+      <DashboardOwner>
+        <WelcomeOwner />
+      </DashboardOwner>
+    ),
     children: [
       {
         path: "create",

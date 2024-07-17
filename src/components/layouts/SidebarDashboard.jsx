@@ -18,8 +18,7 @@ const SidebarDashboard = () => {
             showMenu
                 ? "w-16 bg-amber-500 h-screen px-5 py-20"
                 : "w-[40%] bg-amber-500 h-screen px-3 py-20"
-            }`}
-        >
+            }`}>
             {showMenu ? (
                 <CgMenuHotdog
                     onClick={() => setShowMenu(!showMenu)}
@@ -91,8 +90,6 @@ const SidebarDashboard = () => {
                     }`}
                     />
                 </Link>
-
-        
             </nav>
         </aside>
     );

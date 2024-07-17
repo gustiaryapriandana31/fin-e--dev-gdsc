@@ -1,7 +1,7 @@
 import { useState } from "react";
 import donutDarkChoco from "../../assets/donutDarkChoco.png";
 import donutPinky from "../../assets/donutPinky.png";
-import { DonutsData } from "../../staticData/Composition";
+import { DonutsData } from "../../staticData/DonutsDataComposition";
 import Ripple from "../fragments/magicUI/Ripple";
 import Article from "../fragments/Article";
 import Button from "../elements/Button";

@@ -2,6 +2,7 @@ import Navbar from "./components/layouts/Navbar";
 import HeroSection from "./components/layouts/HeroSection";
 import About from "./components/layouts/About"
 import Composition from "./components/layouts/Composition";
+import Ingredients from "./components/layouts/Ingredients";
 import FormReviewer from "./components/layouts/FormReviewer";
 import Footer from "./components/layouts/Footer"; 
 
@@ -13,6 +14,7 @@ function App () {
         <HeroSection />
         <About />
         <Composition />
+        <Ingredients />
         <FormReviewer />
         <Footer />
       </div>
