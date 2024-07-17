@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { donutsDataDB } from "../../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import Navbar from "../layouts/Navbar";
 
 import CardDonut from "../fragments/CardDonut";
 
@@ -8,6 +9,7 @@ const Donuts = () => {
   const [donutsData, setDonutsData] = useState([]);
   const [donutsCart, setDonutsCart] = useState([]);
   const [donutTotalPrice, setDonutTotalPrice] = useState(0);
+  const [popUpCart, setPopUpCart] = useState(false);
   
   useEffect(() => {
       setDonutsCart(JSON.parse(localStorage.getItem("donutsCart")) || []);
@@ -60,11 +62,12 @@ const Donuts = () => {
 
   return (
     <div className="md:p-8 p-3">
+      <Navbar />
       <h2 className="mt-2 md:mb-6 mb-3 text-center md:text-4xl text-2xl font-bold text-orange-600">
-        All Donuts Available
+        All Donuts Available <span className="md:hidden text-sm ml-5 inline-block p-2 bg-orange-500 text-white rounded-lg" onClick={() => setPopUpCart(!popUpCart)}>Cart <span className="text-xs font-bold text-white text-center">{donutsCart.length}</span></span>
       </h2>
-      <div className="md:flex flex-row md:gap-5">
-        <div className="md:mb-0 mb-7 relative md:w-3/5 grid md:grid-cols-3 grid-cols-2 gap-3">
+      <div className="relative md:static md:flex flex-row md:gap-5">
+        <div className={`md:mb-0 mb-7 relative md:w-3/5 grid md:grid-cols-3 grid-cols-2 gap-3 ${popUpCart ? "opacity-50" : "opacity-100"}`}>
           {donutsData.map((data) => (
             <CardDonut key={data.donutId}>
               <CardDonut.CardHeader
@@ -83,7 +86,7 @@ const Donuts = () => {
             </CardDonut>
           ))}
         </div>
-        <div className="w-2/5 px-8">
+        <div className={`md:static md:block md:w-2/5 md:px-8 ${popUpCart ? "block p-5 absolute top-0 w-full right-0 bg-slate-200 rounded-xl" : "hidden"}`}>
           <h1 className="text-3xl font-bold text-center">Cart</h1>
           <table className="text-left table-auto border-separate">
             <thead>

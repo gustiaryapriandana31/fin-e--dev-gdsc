@@ -1,7 +1,7 @@
 function Ripple({
   mainCircleSize = 210,
   mainCircleOpacity = 0.34,
-  numCircles = 8,
+  numCircles = 6,
 }) {
   return (
     <div className="absolute inset-0 flex items-center justify-center bg-white/5 mask-image:linear-gradient(to_bottom,white,transparent)">

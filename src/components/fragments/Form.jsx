@@ -50,8 +50,8 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={handleSubmitForm} className="w-1/2 p-10 mx-auto shadow-xl bg-white/10 rounded-[60px]">
-            <div className="mb-3">
+        <form onSubmit={handleSubmitForm} className="md:w-1/2 w-3/4 md:p-10 p-4 mx-auto shadow-xl bg-white/10 rounded-xl">
+            <div className="md:mb-3 mb-5">
                 <Label htmlFor="name">Your Name :</Label>
                 <Input type="text" name="name" value={reviewerName} placeholder="Enter your name" onChange= {handleReviewerNameChange}/>
             </div>

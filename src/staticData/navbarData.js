@@ -7,7 +7,7 @@ export const navBarData = [
     {
         id: 2,
         title: "About",
-        link: "/about"
+        link: "#about"
     },
     {
         id: 3,
@@ -17,6 +17,6 @@ export const navBarData = [
     {
         id: 4,
         title: "Reviews",
-        link: "/review"
+        link: "#review"
     },
 ]

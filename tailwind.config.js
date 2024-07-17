@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        xs: "360px",
         sm: "400px",
         // => @media (min-width: 400px) { ... }
 
@@ -11,7 +12,7 @@ export default {
         // => @media (min-width: 700px) { ... }
       },
       spacing: {
-        38: "9.5rem",
+        30: "7.5rem",
         42: "10.5rem",
       },
       fontFamily: {

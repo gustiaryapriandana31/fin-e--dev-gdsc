@@ -76,7 +76,7 @@ const SidebarDashboard = () => {
                 </Link>
 
                 <Link
-                    to="read-review"
+                    to="readreview"
                     className={`p-2 font-semibold font-poppins md:text-lg text-sm text-white hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                     showMenu ? "hidden" : "block"
                     }`}

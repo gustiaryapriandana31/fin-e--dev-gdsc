@@ -13,7 +13,7 @@ export const DonutsData = [
   },
   {
     number: 3,
-    title: "Taburan Meses / Sprinkles",
+    title: "Taburan Sprinkles",
     article:
       "Taburan meses yang melimpah menjadikan warna donat dapat menggugah selera.",
   },
@@ -31,7 +31,7 @@ export const DonutsData = [
   },
   {
     number: 6,
-    title: "Meses yang Berwarna-warni",
+    title: "Colourfull Sprinkles",
     article:
       "Meses yang berwarna-warni membuat donat ini terlihat cantik dan menggugah selera.",
   },
