@@ -4,9 +4,14 @@ import { collection, getDocs } from "firebase/firestore";
 
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
+import TabbedNavigation from "../fragments/TabbedNavigation";
+
+const tabs = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
+// const tabs = ["Star 1", "Star 2", "Star 3", "Star 4", "Star 5"];
 
 const ReadReviewReviewer = () => {
 
+    const [activeTab, setActiveTab] = useState(false);
     const [reviewsData, setReviewsData] = useState([]);
 
     useEffect(() => {
@@ -29,10 +34,11 @@ const ReadReviewReviewer = () => {
     }, []);
 
     return (
-      <div className="w-4/5">
-        <h1 className="text-center md:text-4xl text-3xl font-bold text-orange-600 font-serif mt-7">
+      <div className="md:w-full w-4/5">
+        <h1 className="text-center md:text-4xl text-2xl font-bold text-orange-600 font-serif mt-7">
           All Reviews From Customers
         </h1>
+        <TabbedNavigation tabs={tabs} />
         <section className="md:flex md:flex-row md:flex-wrap gap-4 md:p-10 p-6">
           {reviewsData.map((review) => (
             <div

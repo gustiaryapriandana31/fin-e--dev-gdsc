@@ -28,9 +28,9 @@ const CardBody = ({donutName, donutDesc}) => {
     )
 };
 
-const CardFooter = ({donutId, handleAddToOrder}) => {
+const CardFooter = ({donutId, donutPrice, donutName, donutDesc, donutImg, handleAddToCart}) => {
     return(
-        <Button addedClassname="bg-orange-500 rounded-xl" onClick={() => handleAddToOrder(donutId)}>Tambah</Button>
+        <Button addedClassname="bg-orange-500 rounded-xl" onClick={() => handleAddToCart(donutId, donutPrice, donutName, donutDesc, donutImg)}>Tambah</Button>
     ) 
         
 };

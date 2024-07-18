@@ -1,7 +1,7 @@
-import { GiFlour } from "react-icons/gi";
-import { PiEggCrackLight } from "react-icons/pi";
-import { LuMilk } from "react-icons/lu";
-import { GiPotato } from "react-icons/gi";
+// import { GiFlour } from "react-icons/gi";
+// import { PiEggCrackLight } from "react-icons/pi";
+// import { LuMilk } from "react-icons/lu";
+// import { GiPotato } from "react-icons/gi";
 import Flour from "../assets/flour.png";
 import Potato from "../assets/potato.png";
 import Milk from "../assets/milk.png";

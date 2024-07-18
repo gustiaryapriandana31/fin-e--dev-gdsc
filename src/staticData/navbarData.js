@@ -17,6 +17,6 @@ export const navBarData = [
     {
         id: 4,
         title: "Reviews",
-        link: "#review"
+        link: "/reviews"
     },
 ]

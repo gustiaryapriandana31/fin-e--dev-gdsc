@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { donutsDataDB } from "../../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import Navbar from "../layouts/Navbar";
-
 import CardDonut from "../fragments/CardDonut";
+// import { CartDonut } from "../../context/CartContext";
 
 const Donuts = () => {
+  // const { Cart, setCart } = useContext(CartDonut);
   const [donutsData, setDonutsData] = useState([]);
   const [donutsCart, setDonutsCart] = useState([]);
   const [donutTotalPrice, setDonutTotalPrice] = useState(0);
@@ -18,10 +19,7 @@ const Donuts = () => {
   useEffect(() => {
     if (donutsCart.length > 0) {
       const sumTotal = donutsCart.reduce((acc, item) => {
-        const donut = donutsData.find(
-          (donut) => donut.donutId === item.donutId
-        );
-        return acc + donut.donutPrice * item.qty;
+        return acc + item.donutPrice * item.qty;
       }, 0);
       setDonutTotalPrice(sumTotal);
       localStorage.setItem("donutsCart", JSON.stringify(donutsCart));
@@ -48,7 +46,7 @@ const Donuts = () => {
     readData();
   }, []);
   
-  const handleAddToOrder = (donutId) => {
+  const handleAddToCart = (donutId, donutPrice, donutName, donutDesc, donutImg) => {
     if (donutsCart.find((item) => item.donutId === donutId)) {
       setDonutsCart(
         donutsCart.map((item) =>
@@ -56,7 +54,7 @@ const Donuts = () => {
         )
       );
     } else {
-      setDonutsCart([...donutsCart, { donutId, qty: 1 }]);
+      setDonutsCart([...donutsCart, { donutId:donutId, donutPrice: donutPrice, donutName: donutName, donutDesc: donutDesc, donutImg: donutImg, qty: 1 }]);
     }
   };
 
@@ -81,7 +79,11 @@ const Donuts = () => {
               />
               <CardDonut.CardFooter
                 donutId={data.donutId}
-                handleAddToOrder={handleAddToOrder}
+                donutPrice={data.donutPrice}
+                donutName={data.donutName}
+                donutDesc={data.donutDesc}
+                donutImg={data.donutImg}
+                handleAddToCart={handleAddToCart}
               />
             </CardDonut>
           ))}
@@ -104,19 +106,14 @@ const Donuts = () => {
                   const donut = donutsData.find(
                     (donut) => donut.donutId === item.donutId
                   );
+                  console.log(item.donutName);
                   return (
                     <tr key={item.donutId}>
-                      <td>{donut.donutName}</td>
-                      <td>{donut.donutPrice}</td>
-                      <td>
-                        <img
-                          src={donut.donutImg}
-                          alt={donut.donutName}
-                          className="w-20 h-10"
-                        />
-                      </td>
+                      <td>{item.donutName}</td>
+                      <td>{item.donutPrice}</td>
+                      <td><img src={item.donutImg} alt={item.donutName}/></td>
                       <td>{item.qty}</td>
-                      <td>{item.qty * donut.donutPrice}</td>
+                      <td>{item.qty * item.donutPrice}</td>
                     </tr>
                   );
                 })}

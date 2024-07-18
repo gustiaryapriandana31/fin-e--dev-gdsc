@@ -15,7 +15,6 @@ function App () {
         <About />
         <Composition />
         <Ingredients />
-        <FormReviewer />
         <Footer />
       </div>
     </>
