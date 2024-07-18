@@ -8,7 +8,7 @@ const CardDonut = ({children}) => {
 
 const CardHeader = ({donutImg, donutPrice, donutName}) => {
     return (
-      <div className="md:bg-plate border-b-2 border-orange-300">
+      <div className="bg-plate border-b-2 border-orange-300">
         <div className="md:my-10 my-2 md:p-3 p-1">
           <img src={donutImg} alt={donutName} className="md:w-full md:h-full w-32 h-20"/>
         </div>

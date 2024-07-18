@@ -1,12 +1,11 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { donutsDataDB } from "../../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom"; // Add this line
 import Navbar from "../layouts/Navbar";
 import CardDonut from "../fragments/CardDonut";
-// import { CartDonut } from "../../context/CartContext";
 
 const Donuts = () => {
-  // const { Cart, setCart } = useContext(CartDonut);
   const [donutsData, setDonutsData] = useState([]);
   const [donutsCart, setDonutsCart] = useState([]);
   const [donutTotalPrice, setDonutTotalPrice] = useState(0);
@@ -24,7 +23,7 @@ const Donuts = () => {
       setDonutTotalPrice(sumTotal);
       localStorage.setItem("donutsCart", JSON.stringify(donutsCart));
     }
-  }, [donutsCart, donutsData]);
+  }, [donutsCart]);
 
   // To read Data from Database Firestore
   useEffect(() => {
@@ -58,12 +57,19 @@ const Donuts = () => {
     }
   };
 
+  const itemQty = donutsCart.reduce((acc, item) => {
+    return acc + item.qty;
+  }, 0);
+
   return (
     <div className="md:p-8 p-3">
       <Navbar />
-      <h2 className="mt-2 md:mb-6 mb-3 text-center md:text-4xl text-2xl font-bold text-orange-600">
-        All Donuts Available <span className="md:hidden text-sm ml-5 inline-block p-2 bg-orange-500 text-white rounded-lg" onClick={() => setPopUpCart(!popUpCart)}>Cart <span className="text-xs font-bold text-white text-center">{donutsCart.length}</span></span>
-      </h2>
+      <div className="flex flex-row justify-center items-center my-5">
+        <h2 className="basis-3/4 mt-2 md:mb-6 mb-3 text-center md:text-4xl text-2xl font-bold text-orange-600">
+          All Donuts Available 
+        </h2>
+        <div className="basis-1/2 md:hidden text-lg text-center p-2 bg-orange-500 text-white rounded-lg" onClick={() => setPopUpCart(!popUpCart)}>Cart {donutsCart.length} | Qty {itemQty}</div>
+      </div>
       <div className="relative md:static md:flex flex-row md:gap-5">
         <div className={`md:mb-0 mb-7 relative md:w-3/5 grid md:grid-cols-3 grid-cols-2 gap-3 ${popUpCart ? "opacity-50" : "opacity-100"}`}>
           {donutsData.map((data) => (
@@ -103,10 +109,6 @@ const Donuts = () => {
             <tbody>
               {donutsCart.length > 0 &&
                 donutsCart.map((item) => {
-                  const donut = donutsData.find(
-                    (donut) => donut.donutId === item.donutId
-                  );
-                  console.log(item.donutName);
                   return (
                     <tr key={item.donutId}>
                       <td>{item.donutName}</td>
@@ -121,6 +123,7 @@ const Donuts = () => {
                 <td colSpan={4}>Grand Total Price</td>
                 <td>{donutTotalPrice}</td>
               </tr>
+              <Link to="/transaction" className="block bg-orange-400 p-2 px-5 my-10 rounded-full">Order</Link>
             </tbody>
           </table>
         </div>

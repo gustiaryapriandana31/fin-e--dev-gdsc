@@ -13,7 +13,27 @@ img.donut-image {
 
 .bg-plate {
     background-image: url('assets/plate.png');
-    background-size: cover;
-    background-position-x: -80px;
+    background-size: 300px;
+    background-position-x: -50px;
+    background-position-y: 20px;
     background-repeat: no-repeat;
+}
+
+.bg-big-plate {
+    background-image: url('assets/big-plate.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .bg-plate {
+        background-size: 180px;
+        background-position-x: -21px;
+        background-position-y: 2px;
+    }
+
+    .bg-big-plate {
+        background-size: cover;
+    }
 }
