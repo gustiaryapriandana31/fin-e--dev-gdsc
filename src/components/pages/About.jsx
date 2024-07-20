@@ -1,9 +1,5 @@
-"use client";
-
-// import { cn } from "@/lib/utils";
 import donutCoffee from "../../assets/donutCoffee.png";
 import donutOreo from "../../assets/donutOreo.png";
-// import DotPattern from "../fragments/magicUI/DotPattern";
 
 const About = () => {
   return (

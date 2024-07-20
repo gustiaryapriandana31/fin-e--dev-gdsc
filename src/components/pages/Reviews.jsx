@@ -1,5 +1,5 @@
-import ReadReviewReviewer from "../ownerComponents/ReadReviewReviewer"
-import FormReviewer from "./FormReviewer"
+import ReadReviewReviewer from "../pages/owner/ReadReviewReviewer";
+import FormReviewer from "../layouts/FormReviewer"
 
 const Reviews = () => {
     return (

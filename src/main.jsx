@@ -3,17 +3,23 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CreateDonutData from './components/ownerComponents/CreateDonutData';
-import ReadDonutData from './components/ownerComponents/ReadDonutData';
-import UpdateDonutData from './components/ownerComponents/UpdateDonutData';
-import Donuts from './components/layouts/Donuts';
-import ReadReviewReviewer from './components/ownerComponents/ReadReviewReviewer.jsx';
-import DashboardOwner from './components/layouts/DashboardOwner.jsx';
-import WelcomeOwner from './components/ownerComponents/WelcomeOwner.jsx';
-// import Reviews from './components/layouts/Reviews.jsx';
+
+// import layouts
 import FormReviewer from './components/layouts/FormReviewer.jsx';
 import NotFoundPage from './components/layouts/NotFound.jsx';
-import Transactions from './components/layouts/Transactions.jsx';
+
+// import pages
+import CreateDonutData from "./components/pages/owner/CreateDonutData";
+import ReadDonutData from './components/pages/owner/ReadDonutData';
+import UpdateDonutData from "./components/pages/owner/UpdateDonutData";
+import ReadReviewReviewer from "./components/pages/owner/ReadReviewReviewer.jsx";
+import WelcomeOwner from './components/pages/owner/WelcomeOwner.jsx';
+import TransactionOrders from "./components/pages/owner/TransactionOrders.jsx";
+// import Reviews from './components/pages/Reviews.jsx';
+import Donuts from './components/pages/Donuts';
+import DashboardOwner from './components/pages/DashboardOwner.jsx';
+import Transactions from './components/pages/Transactions.jsx';
+
 
 const Router = createBrowserRouter([
   {
@@ -48,16 +54,20 @@ const Router = createBrowserRouter([
     ),
     children: [
       {
-        path: "create",
+        path: "formcreate",
         element: <CreateDonutData />,
       },
       {
-        path: "read",
+        path: "donuts",
         element: <ReadDonutData />,
       },
       {
-        path: "readreview",
-        element: <ReadReviewReviewer />,
+        path: "reviews",
+        element: <ReadReviewReviewer />,  
+      },
+      {
+        path: "transactions",
+        element: <TransactionOrders />,
       },
     ],
   },

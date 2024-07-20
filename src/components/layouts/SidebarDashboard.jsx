@@ -7,6 +7,7 @@ import { GoStarFill } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
 import { CgMenuHotdog } from "react-icons/cg";
 import { IoCloseSharp } from "react-icons/io5";
+import { MdOutlineRateReview } from "react-icons/md";
 
 const SidebarDashboard = () => {
 
@@ -14,10 +15,10 @@ const SidebarDashboard = () => {
 
     return (
         <aside
-            className={`h-auto md:w-1/5 md:px-12 transition-all duration-400 ease-in ${
+            className={`h-auto md:w-1/5 md:px-8 transition-all duration-400 ease-in ${
             showMenu
                 ? "w-16 bg-amber-500 h-screen px-5 py-20"
-                : "w-[40%] bg-amber-500 h-screen px-3 py-20"
+                : "w-[40%] bg-amber-500 h-screen px-2 py-20"
             }`}>
             {showMenu ? (
                 <CgMenuHotdog
@@ -41,7 +42,7 @@ const SidebarDashboard = () => {
             </Link>
             <nav className="flex flex-col md:gap-5 gap-3 mt-12">
                 <Link
-                    to="create"
+                    to="formcreate"
                     className={`p-2 font-semibold font-poppins md:text-lg text-sm text-white hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                     showMenu ? "hidden" : "block"
                     }`}
@@ -49,7 +50,7 @@ const SidebarDashboard = () => {
                     <GoStarFill className="inline mr-1 md:mr-3 md:text-xl text-sm" />
                     Form
                 </Link>
-                <Link to="create">
+                <Link to="formcreate">
                     <GoStarFill
                     className={`inline mr-1 text-2xl text-white md:hidden hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                         showMenu ? "block" : "hidden"
@@ -58,7 +59,7 @@ const SidebarDashboard = () => {
                 </Link>
 
                 <Link
-                    to="read"
+                    to="donuts"
                     className={`p-2 font-semibold font-poppins md:text-lg text-sm text-white hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                     showMenu ? "hidden" : "block"
                     }`}
@@ -66,7 +67,7 @@ const SidebarDashboard = () => {
                     <LuDonut className="inline mr-1 md:mr-3 md:text-xl text-sm" />
                     Donuts
                 </Link>
-                <Link to="read">
+                <Link to="donuts">
                     <LuDonut
                     className={`inline mr-1 text-2xl text-white md:hidden hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                         showMenu ? "block" : "hidden"
@@ -75,15 +76,32 @@ const SidebarDashboard = () => {
                 </Link>
 
                 <Link
-                    to="readreview"
+                    to="reviews"
                     className={`p-2 font-semibold font-poppins md:text-lg text-sm text-white hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                     showMenu ? "hidden" : "block"
                     }`}
                 >
-                    <GrTransaction className="inline mr-1 md:mr-3 md:text-xl text-sm" />
+                    <MdOutlineRateReview className="inline mr-1 md:mr-3 md:text-xl text-sm" />
                     Reviews
                 </Link>
-                <Link to="read">
+                <Link to="reviews">
+                    <MdOutlineRateReview
+                    className={`inline mr-1 text-2xl text-white md:hidden hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
+                        showMenu ? "block" : "hidden"
+                    }`}
+                    />
+                </Link>
+
+                <Link
+                    to="transactions"
+                    className={`p-2 font-semibold font-poppins md:text-sm text-[0.6rem] text-white hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
+                    showMenu ? "hidden" : "block"
+                    }`}
+                >
+                    <GrTransaction className="inline mr-1 md:mr-3 md:text-lg text-xs" />
+                    Transactions
+                </Link>
+                <Link to="transactions">
                     <GrTransaction
                     className={`inline mr-1 text-2xl text-white md:hidden hover:bg-white hover:text-orange-500 rounded-full hover:scale-110 ${
                         showMenu ? "block" : "hidden"

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
     return (
       <nav className="md:flex md:flex-row md:justify-center">
@@ -39,7 +40,7 @@ const Navbar = () => {
             }`}
           >
             {navBarData.map((data) => (
-              <Link to={data.link} key={data.id} className="block text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110">
+              <Link to={data.link} key={data.id} className={`block text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110 ${isActive ? "bg-white text-orange-500" : "bg-orange-500"}`} onClick={() => setIsActive(!isActive)}>
                   {data.title}
               </Link>
             ))}

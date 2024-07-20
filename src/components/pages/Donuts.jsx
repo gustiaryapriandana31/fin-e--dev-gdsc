@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom"; // Add this line
 import Navbar from "../layouts/Navbar";
 import CardDonut from "../fragments/CardDonut";
+import Button from "../elements/Button";
 
 const Donuts = () => {
   const [donutsData, setDonutsData] = useState([]);
@@ -123,7 +124,16 @@ const Donuts = () => {
                 <td colSpan={4}>Grand Total Price</td>
                 <td>{donutTotalPrice}</td>
               </tr>
-              <Link to="/transaction" className="block bg-orange-400 p-2 px-5 my-10 rounded-full">Order</Link>
+              <Link to="/transaction">
+                <Button
+                addedClassname="bg-orange-500 hover:bg-orange-700 font-bold"
+                disabled={
+                  donutTotalPrice == 0
+                }>
+                Pesan
+              </Button>
+
+              </Link>
             </tbody>
           </table>
         </div>

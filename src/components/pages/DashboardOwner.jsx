@@ -1,4 +1,4 @@
-import SidebarDashboard from './SidebarDashboard';
+import SidebarDashboard from '../layouts/SidebarDashboard';
 import { Outlet } from 'react-router-dom';
 
 const DashboardOwner = () => {

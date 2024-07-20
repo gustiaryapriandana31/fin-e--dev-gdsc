@@ -67,7 +67,6 @@ const UpdateDonutData = () => {
       const imgfiles = e.target.files[0];
       const donutsDataRef = ref(donutsImgDB, "donutImages/" + v4());
       uploadBytes(donutsDataRef, imgfiles).then((data) => {
-        // console.log("Data Image Donut : " + data);
         getDownloadURL(data.ref).then((url) => {
           setDonutImg(url);
         });
