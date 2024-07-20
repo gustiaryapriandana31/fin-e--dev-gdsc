@@ -3,8 +3,9 @@ import HeroSection from "./components/pages/HeroSection";
 import About from "./components/pages/About"
 import Composition from "./components/pages/Composition";
 import Ingredients from "./components/pages/Ingredients";
-import FormReviewer from "./components/layouts/FormReviewer";
+// import FormReviewer from "./components/layouts/FormReviewer";
 import Footer from "./components/layouts/Footer"; 
+import Address from "./components/pages/Address";
 
 function App () {
   return (
@@ -15,6 +16,7 @@ function App () {
         <About />
         <Composition />
         <Ingredients />
+        <Address />
         <Footer />
       </div>
     </>

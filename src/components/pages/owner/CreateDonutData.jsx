@@ -33,7 +33,6 @@ const CreateDonutData = () => {
     const imgfiles = e.target.files[0];
     const donutsDataRef = ref(donutsImgDB, "donutImages/" + imgfiles.name);
     uploadBytes(donutsDataRef, imgfiles).then((snapshot) => {
-      // console.log("Data Image Donut : " + data);
       getDownloadURL(snapshot.ref).then((url) => {
         setDonutImg(url);
       });
@@ -51,7 +50,7 @@ const CreateDonutData = () => {
         donutImg,
       }).then(() => {
         alert("Data added successfully");
-        window.location.href = "/read";
+        window.location.href = "/dashboard/donuts";
       });
     } catch (error) {
       console.log("Error adding data : ", error);

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import CardDonut from "../fragments/CardDonut";
 import Button from "../elements/Button";
+import TableHeader from "../elements/TableHeader";
+import TableData from "../elements/TableData";
 
 const Donuts = () => {
   const [donutsData, setDonutsData] = useState([]);
@@ -63,7 +65,7 @@ const Donuts = () => {
   }, 0);
 
   return (
-    <section className="pt-5">
+    <section className="md:pt-5">
       <Navbar />
       <div className="md:p-8 p-3">
         <div className="flex flex-row justify-center items-center my-5">
@@ -98,32 +100,32 @@ const Donuts = () => {
           </div>
           <div className={`md:static md:block md:w-2/5 md:px-8 ${popUpCart ? "block p-5 absolute top-0 w-full right-0 bg-slate-200 rounded-xl" : "hidden"}`}>
             <h1 className="text-3xl font-bold text-center">Cart</h1>
-            <table className="text-left table-auto border-separate">
-              <thead>
+            <table className="mx-auto my-10 text-left table-auto">
+              <thead className="p-4 md:text-base text-[0.77rem] text-center font-bold font-poppins">
                 <tr>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Image</th>
-                  <th>Quantity</th>
-                  <th>Total Price</th>
+                  <TableHeader>Name</TableHeader>
+                  <TableHeader>Price</TableHeader>
+                  <TableHeader>Image</TableHeader>
+                  <TableHeader>Quantity</TableHeader>
+                  <TableHeader>Total Price</TableHeader>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-center md:text-base text-xs">
                 {donutsCart.length > 0 &&
                   donutsCart.map((item) => {
                     return (
                       <tr key={item.donutId}>
-                        <td>{item.donutName}</td>
-                        <td>{item.donutPrice}</td>
-                        <td><img src={item.donutImg} alt={item.donutName}/></td>
-                        <td>{item.qty}</td>
-                        <td>{item.qty * item.donutPrice}</td>
+                        <TableData>{item.donutName}</TableData>
+                        <TableData>{item.donutPrice}</TableData>
+                        <TableData><img src={item.donutImg} alt={item.donutName}/></TableData>
+                        <TableData>{item.qty}</TableData>
+                        <TableData>{item.qty * item.donutPrice}</TableData>
                       </tr>
                     );
                   })}
-                <tr>
-                  <td colSpan={4}>Grand Total Price</td>
-                  <td>{donutTotalPrice}</td>
+                <tr className="font-roboto-mono">
+                  <td colSpan={4} className="font-bold text-orange-500 border border-slate-600 p-1 md:text-base text-xs">Grand Total Price</td>
+                  <td className="font-bold text-orange-500 border border-slate-600 p-1 md:text-base text-xs">{donutTotalPrice}</td>
                 </tr>
                 <Link to="/transaction">
                   <Button

@@ -7,7 +7,6 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 const ReadDonutData = () => {
-
   const navigatePage = useNavigate();
   const [donutsData, setDonutsData] = useState([]);
   // const [donutImgUrl, setDonutImgUrl] = useState("");
@@ -33,7 +32,9 @@ const ReadDonutData = () => {
 
   const deleteData = async (donutId) => {
     const donutDataRef = doc(donutsDataDB, "donutsData", donutId);
-    // const donutImgRef = ref(donutsImgDB, "donutImages");
+
+    // Pisahkan nama file dari URL
+    // const donutImgRef = ref(donutsImgDB, `donutImages/StrawberryDonut.png`);
     // const getUrlImage = (snapshot) => {
     //   getDownloadURL(snapshot.ref).then((url) => {
     //     setDonutImgUrl(url);
@@ -45,7 +46,7 @@ const ReadDonutData = () => {
     try {
       await deleteDoc(donutDataRef).then(() => {
         // Delete the file
-        // deleteObject(getUrlImage(donutImgRef))
+        // deleteObject(donutImgRef)
         //   .then(() => {
         //     console.log("Image Deleted Successfully");
         //   })
@@ -54,7 +55,7 @@ const ReadDonutData = () => {
         //   });
 
         alert("Data deleted successfully!");
-        window.location.href = "/read";
+        window.location.href = "/dashboard/donuts";
       });
     } catch (error) {
       console.error("Error deleting data:", error);
@@ -67,7 +68,10 @@ const ReadDonutData = () => {
         All Donuts Available
       </h1>
 
-      <Link to="/create" className="text-center inline-block font-bold text-white mt-10 bg-orange-400 rounded-md px-4 py-2 md:mx-5 mx-2 mb-3">
+      <Link
+        to="/dashboard/formcreate"
+        className="text-center inline-block font-bold text-white mt-10 bg-orange-400 rounded-md px-4 py-2 md:mx-5 mx-2 mb-3"
+      >
         Add Data
       </Link>
       <section className="grid grid-cols-2 gap-3 mx-2 md:grid-cols-5 md:gap-0">
@@ -97,13 +101,12 @@ const ReadDonutData = () => {
               className="bg-orange-400 p-2 absolute -bottom-4 left-0 w-1/2"
             >
               <FaRegEdit className="inline text-lg text-white hover:text-orange-500" />
-              
             </button>
             <button
-              onClick={() => deleteData(donut.donutId)}
+              onClick={() => deleteData(donut.donutId, donut.donutImg)}
               className="bg-red-400 p-2 absolute -bottom-4 right-0 w-1/2"
             >
-              <MdDelete className="inline text-lg text-white hover:text-red-500"/>
+              <MdDelete className="inline text-lg text-white hover:text-red-500" />
             </button>
           </div>
         ))}

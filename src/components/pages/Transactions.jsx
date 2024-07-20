@@ -225,7 +225,7 @@ const Transactions = () => {
 
             <table className="mx-auto bg-amber-100/80 my-10 text-left table-auto">
               <thead className="p-4 md:text-base text-[0.77rem] text-center font-bold font-poppins">
-                <tr className="">
+                <tr>
                   <TableHeader>No</TableHeader>
                   <TableHeader>Donut Name</TableHeader>
                   <TableHeader>Price</TableHeader>

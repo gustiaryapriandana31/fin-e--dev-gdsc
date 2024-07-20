@@ -6,7 +6,7 @@ const About = () => {
     <section id="about" className="md:flex md:flex-row md:justify-center bg-amber-700 md:h-screen">
       <div className="md:bg-amber-200 md:px-20 px-10 md:py-24 py-12 font-roboto md:basis-1/2 rounded-tr-full rounded-br-full">
         <h1 className="mt-7 text-center font-roboto-mono font-bold text-3xl text-amber-400 md:text-orange-600">
-          About Dodonats
+          Tentang Dodonats
         </h1>
         <p className="md:w-3/4 w-full my-8 text-sm md:text-lg md:text-slate-800 text-white/70 text-center md:text-justify md:leading-8 font-poppins">
           DODONATS merupakan kedai rintisan yang menjual berbagai macam donat
