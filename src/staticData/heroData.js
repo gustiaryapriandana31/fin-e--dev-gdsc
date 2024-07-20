@@ -1,9 +1,9 @@
-import donut1 from "../assets/donutChoco.png";
-import donut2 from "../assets/donutTiramisu.png";
-import donut3 from "../assets/donutPinky.png";
-import donut4 from "../assets/donutNuts.png";
-import donut5 from "../assets/donutSugar.png";
-import donut6 from "../assets/donutDarkChoco.png";
+import donut1 from "../assets/ChocoDonut.png";
+import donut2 from "../assets/TiramisuDonut.png";
+import donut3 from "../assets/PinkyDonut.png";
+import donut4 from "../assets/NutsDonut.png";
+import donut5 from "../assets/SugarDonut.png";
+import donut6 from "../assets/DarkChocoDonut.png";
 
 export const heroImage = [
   {

@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Button from "../elements/Button";
 import Input from "../elements/Input";
 import Label from "../elements/Label";
+import TableHeader from "../elements/TableHeader";
+import TableData from "../elements/TableData";
+
 
 const Transactions = () => {
     const [donutsCartTrx, setDonutsCartTrx] = useState([]);
@@ -255,16 +258,6 @@ const Transactions = () => {
         </div>
       </section>
     );
-}
-
-const TableData = ({children, colSpan = 0}) => {
-  return <td className="border border-slate-600" colSpan={colSpan}>{children}</td>;
-}
-
-const TableHeader = ({children}) => {
-  return(
-    <th className="md:py-2 md:px-5 p-1 bg-orange-300/80 border border-slate-600">{children}</th>
-  )
 }
 
 export default Transactions;

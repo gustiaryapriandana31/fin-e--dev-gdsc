@@ -26,7 +26,7 @@ const HeroSection = () => {
             Sweeten your taste, sweeten your life, Enjoy your day
           </p>
           <Link to="/donuts">
-            <Button addedClassname="bg-transparent border-2 border-white text-white hover:bg-amber-700 hover:text-white hover:border-none hover:scale-125 hover:font-bold">
+            <Button addedClassname="mt-6 bg-transparent border-2 border-white text-white hover:bg-amber-700 hover:text-white hover:border-none hover:scale-125 hover:font-bold">
               Order Now <TbNotes className="inline text-2xl" />
               <FaPenAlt className="inline text-lg -ml-2 -mt-2" />
             </Button>

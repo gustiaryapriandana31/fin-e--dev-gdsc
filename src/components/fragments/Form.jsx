@@ -63,7 +63,7 @@ const Form = () => {
                 <Label htmlFor="rating">Rating (1-5) :</Label>
                 <Input type="text" name="rating" value={reviewRating} placeholder="Just number (enable with comma)" onChange={handleReviewRatingChange}/>
             </div>
-            <Button addedClassname="bg-orange-500 hover:bg-orange-700 font-bold" disabled={reviewerName.length === 0 ||
+            <Button addedClassname="mt-8 bg-orange-500 hover:bg-orange-700 font-bold" disabled={reviewerName.length === 0 ||
             reviewContent.length === 0 ||
             reviewRating.length === 0}>Send Review</Button>
         </form>

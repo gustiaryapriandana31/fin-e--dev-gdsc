@@ -1,6 +1,6 @@
 import { useState } from "react";
-import donutDarkChoco from "../../assets/donutDarkChoco.png";
-import donutPinky from "../../assets/donutPinky.png";
+import donutDarkChoco from "../../assets/DarkChocoDonut.png";
+import donutPinky from "../../assets/PinkyDonut.png";
 import { DonutsData } from "../../staticData/DonutsDataComposition";
 import Ripple from "../fragments/magicUI/Ripple";
 import Article from "../fragments/Article";
@@ -28,8 +28,8 @@ const Composition = () => {
     return (
       <section className="h-screen font-roboto bg-amber-950 md:flex md:flex-row md:justify-center md:items-center relative">
 
-          <img src={donutDarkChoco} alt="Donut Dark Choco" className="z-10 inline-block my-28"/>
-          <img src={donutPinky} alt="Donut Dark Choco" className="z-10  inline-block mt-12"/>
+          <img src={donutDarkChoco} alt="Donut Dark Choco" className="z-10 inline-block md:my-0 my-28 "/>
+          <img src={donutPinky} alt="Donut Dark Choco" className="z-10 inline-block md:mt-3 mt-12"/>
           <Ripple/>
 
           <h1 className="z-10 font-bold md:text-5xl text-4xl text-white font-poppins absolute top-6 md:left-[38%] left-16">Bedah Donut</h1>

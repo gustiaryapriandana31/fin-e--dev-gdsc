@@ -1,4 +1,4 @@
-import { donutsDataDB, donutsImgDB } from "../../config/firebaseConfig";
+import { donutsDataDB, donutsImgDB } from "../../../config/firebaseConfig";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDoc, doc, updateDoc } from "firebase/firestore";

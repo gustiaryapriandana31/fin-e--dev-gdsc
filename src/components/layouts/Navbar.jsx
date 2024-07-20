@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false);
-    const [isActive, setIsActive] = useState(false);
+    // const [isActive, setIsActive] = useState(false);
 
     return (
       <nav className="md:flex md:flex-row md:justify-center">
-        <div className="md:flex md:justify-end md:items-center md:rounded-full md:px-10 md:w-3/4 bg-transparent shadow-md md:mb-7">
+        <div className="md:flex md:justify-end md:items-center md:rounded-full md:px-10 md:w-3/4 bg-orange-800/40 shadow-md md:mb-7">
           <div className="py-3 px-8">
             <img
               src={logo}
@@ -40,7 +40,7 @@ const Navbar = () => {
             }`}
           >
             {navBarData.map((data) => (
-              <Link to={data.link} key={data.id} className={`block text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110 ${isActive ? "bg-white text-orange-500" : "bg-orange-500"}`} onClick={() => setIsActive(!isActive)}>
+              <Link to={data.link} key={data.id} className="block text-center rounded-xl p-3 md:my-0 hover:bg-orange-500 md:hover:scale-110">
                   {data.title}
               </Link>
             ))}

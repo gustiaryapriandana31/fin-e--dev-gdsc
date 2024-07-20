@@ -1,11 +1,11 @@
-import { donutsDataDB, donutsImgDB } from "../../config/firebaseConfig";
+import { donutsDataDB, donutsImgDB } from "../../../config/firebaseConfig";
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-import Button from "../elements/Button";
-import Input from "../elements/Input";
-import Label from "../elements/Label";
+import Button from "../../elements/Button";
+import Input from "../../elements/Input";
+import Label from "../../elements/Label";
 
 const CreateDonutData = () => {
   const [donutName, setDonutName] = useState("");

@@ -1,8 +1,8 @@
-import { donutsDataDB, donutsImgDB } from "../../config/firebaseConfig";
+import { donutsDataDB, donutsImgDB } from "../../../config/firebaseConfig";
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { ref, deleteObject, getDownloadURL } from "firebase/storage";
+// import { ref, deleteObject, getDownloadURL } from "firebase/storage";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
@@ -10,7 +10,7 @@ const ReadDonutData = () => {
 
   const navigatePage = useNavigate();
   const [donutsData, setDonutsData] = useState([]);
-  const [donutImgUrl, setDonutImgUrl] = useState("");
+  // const [donutImgUrl, setDonutImgUrl] = useState("");
 
   useEffect(() => {
     const readData = async () => {

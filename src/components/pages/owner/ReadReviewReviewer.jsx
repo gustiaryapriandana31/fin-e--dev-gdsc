@@ -1,17 +1,17 @@
-import { donutsDataDB } from "../../config/firebaseConfig";
+import { donutsDataDB } from "../../../config/firebaseConfig";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
-import TabbedNavigation from "../fragments/TabbedNavigation";
+import TabbedNavigation from "../../fragments/TabbedNavigation";
 
 const tabs = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
 // const tabs = ["Star 1", "Star 2", "Star 3", "Star 4", "Star 5"];
 
 const ReadReviewReviewer = () => {
 
-    const [activeTab, setActiveTab] = useState(false);
+    // const [activeTab, setActiveTab] = useState(false);
     const [reviewsData, setReviewsData] = useState([]);
 
     useEffect(() => {

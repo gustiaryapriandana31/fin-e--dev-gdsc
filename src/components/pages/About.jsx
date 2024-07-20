@@ -1,9 +1,9 @@
-import donutCoffee from "../../assets/donutCoffee.png";
-import donutOreo from "../../assets/donutOreo.png";
+import donutCoffee from "../../assets/CoffeeDonut.png";
+import donutOreo from "../../assets/OreoDonut.png";
 
 const About = () => {
   return (
-    <section id="about" className="md:flex md:flex-row md:justify-center bg-yellow-700 md:h-screen">
+    <section id="about" className="md:flex md:flex-row md:justify-center bg-amber-700 md:h-screen">
       <div className="md:bg-amber-200 md:px-20 px-10 md:py-24 py-12 font-roboto md:basis-1/2 rounded-tr-full rounded-br-full">
         <h1 className="mt-7 text-center font-roboto-mono font-bold text-3xl text-amber-400 md:text-orange-600">
           About Dodonats
@@ -19,16 +19,16 @@ const About = () => {
       </div>
       <div className="md:block hidden md:basis-1/2 rounded-tl-full rounded-bl-full relative">
         <figure>
-          <div className="bg-transparent animate-spin rounded-full w-3/5 h-3/5 absolute top-44 left-40 shadow-md shadow-yellow-900"></div>
-          <img
-            src={donutOreo}
-            alt="Donut Coffee"
-            className="donut-image inline-block absolute top-40 right-1 w-3/4 opacity-90"
-          />
+          <div className="bg-transparent animate-spin rounded-full w-3/4 h-3/4 absolute top-24 left-28 shadow-md shadow-yellow-900"></div>
           <img
             src={donutCoffee}
+            alt="Donut Coffee"
+            className="donut-image inine-block w-3/4 absolute bottom-24 left-12 opacity-90"
+          />
+          <img
+            src={donutOreo}
             alt="Donut Oreo"
-            className="donut-image inline-block absolute bottom-20 left-20 w-3/4 opacity-90"
+            className="donut-image inine-block w-3/4 absolute top-36 left-48 opacity-90"
           />
         </figure>
       </div>

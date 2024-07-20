@@ -1,8 +1,8 @@
 import Navbar from "./components/layouts/Navbar";
-import HeroSection from "./components/layouts/HeroSection";
-import About from "./components/layouts/About"
-import Composition from "./components/layouts/Composition";
-import Ingredients from "./components/layouts/Ingredients";
+import HeroSection from "./components/pages/HeroSection";
+import About from "./components/pages/About"
+import Composition from "./components/pages/Composition";
+import Ingredients from "./components/pages/Ingredients";
 import FormReviewer from "./components/layouts/FormReviewer";
 import Footer from "./components/layouts/Footer"; 
 
