@@ -7,7 +7,7 @@ export const navBarData = [
     {
         id: 2,
         title: "About",
-        link: ""
+        link: "/"
     },
     {
         id: 3,
