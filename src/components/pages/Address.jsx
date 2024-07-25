@@ -11,7 +11,7 @@ const Address = () => {
         <section
         id="about"
         className="md:flex md:flex-row md:justify-center bg-amber-200/30 md:h-screen p-4">
-            <div className="md:block md:basis-1/2 md:pb-0 pb-16 bg-amber-200 shadow-xl rounded-full relative ">
+            <div className="md:block md:basis-1/2 md:pb-0 pb-16 bg-amber-200/70 shadow-xl rounded-full relative ">
                 <figure className="md:flex md:flex-row md:items-center">
                     <img
                         src={Shop}
@@ -19,9 +19,9 @@ const Address = () => {
                         className="md:mt-40 mt-20 md:ml-0 ml-10 donut-image inline-block w-3/4 opacity-90"
                     />
                     <ul className="md:-ml-20 md:mt-44 mt-10 text-center md:text-base space-y-2">
-                        <li><IoIosCheckmarkCircleOutline className="inline-block text-green-600"/> Rumahnya Para Donat</li>
-                        <li><IoIosCheckmarkCircleOutline className="inline-block text-green-600"/> Promo dan Diskon</li>
-                        <li><IoIosCheckmarkCircleOutline className="inline-block text-green-600"/> Paket Donut Menarik</li>
+                        <li className="text-green-600"><IoIosCheckmarkCircleOutline className="inline-block"/> Rumahnya Para Donat</li>
+                        <li className="text-green-600"><IoIosCheckmarkCircleOutline className="inline-block"/> Promo dan Diskon</li>
+                        <li className="text-green-600"><IoIosCheckmarkCircleOutline className="inline-block"/> Paket Donut Menarik</li>
                     </ul>
                 </figure>
                 <p className="md:ml-28 mt-10 md:text-base text-sm md:text-start text-center"><a href="https://maps.app.goo.gl/eAJzLU4YVKdeD1oG8" className="font-roboto text-red-500"><SiGooglemaps className="inline-block ml-3"/>Meranjat, Ogan Ilir, Sumatera Selatan</a></p>

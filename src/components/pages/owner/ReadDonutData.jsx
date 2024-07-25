@@ -74,7 +74,7 @@ const ReadDonutData = () => {
       >
         Add Data
       </Link>
-      <section className="grid grid-cols-2 gap-3 mx-2 md:grid-cols-5 md:gap-0">
+      <section className="grid grid-cols-2 gap-x-3 gap-y-4 3 mx-2 md:grid-cols-5 md:gap-x-0">
         {donutsData.map((donut, index) => (
           <div
             key={index}

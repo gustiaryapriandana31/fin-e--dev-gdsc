@@ -8,7 +8,7 @@ const About = () => {
         <h1 className="mt-7 text-center font-roboto-mono font-bold text-3xl text-amber-400 md:text-orange-600">
           Tentang Dodonats
         </h1>
-        <p className="md:w-3/4 w-full my-8 text-sm md:text-lg md:text-slate-800 text-white/70 text-center md:text-justify md:leading-8 font-poppins">
+        <p className="md:w-3/4 w-full my-8 text-sm md:text-base md:text-slate-800 text-white/70 text-center md:text-justify md:leading-8 font-poppins">
           DODONATS merupakan kedai rintisan yang menjual berbagai macam donat
           dengan topping yang menggugah selera. Kami menyediakan berbagai macam
           donat yang lezat dan bergizi, dengan topping cair dan taburan di
